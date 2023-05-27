@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Nojumpo
 {
@@ -8,7 +9,10 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         Rigidbody2D _fishRigidbody2D;
 
+        bool _jumpInput;
+        
         const int JUMP_AMOUNT = 85;
+        
         
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Awake() {
@@ -16,7 +20,7 @@ namespace Nojumpo
         }
         
         void Update() {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (_jumpInput)
             {
                 Jump();
             }
@@ -28,6 +32,10 @@ namespace Nojumpo
             _fishRigidbody2D = GetComponent<Rigidbody2D>();
         }
 
+        void OnJump(InputValue inputValue) {
+            _jumpInput = inputValue.isPressed;
+        }
+        
         void Jump() {
             _fishRigidbody2D.velocity = Vector2.up * JUMP_AMOUNT;
         }
