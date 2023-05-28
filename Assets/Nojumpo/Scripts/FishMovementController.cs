@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Nojumpo
+namespace Nojumpo.Scripts
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class FishMovementController : MonoBehaviour

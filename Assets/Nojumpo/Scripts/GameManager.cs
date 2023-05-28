@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Nojumpo.Managers
+namespace Nojumpo.Scripts
 {
     public class GameManager : MonoBehaviour
     {
