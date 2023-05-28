@@ -10,7 +10,7 @@ namespace Nojumpo.Scripts
         const float PIPE_HEAD_SCALE = 3.5f;
         const float CAMERA_ORTHO_SIZE = 50;
 
-        
+
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Start() {
             CreatePipesWithGap(15f, 15f, 10f);
@@ -23,7 +23,7 @@ namespace Nojumpo.Scripts
 
             Transform pipeBody = Instantiate(AssetReferences.Instance.PipeBodyPrefab);
             SpriteRenderer pipeBodySpriteRenderer = pipeBody.GetComponent<SpriteRenderer>();
-
+            BoxCollider2D pipeBodyBoxCollider2D = pipeBody.GetComponent<BoxCollider2D>();
 
             float pipeHeadYPosition;
             float pipeBodyYPosition;
@@ -44,6 +44,8 @@ namespace Nojumpo.Scripts
             pipeHead.position = new Vector3(xPosition, pipeHeadYPosition);
             pipeBody.position = new Vector3(xPosition, pipeBodyYPosition);
             pipeBodySpriteRenderer.size = new Vector2(pipeBodyWidth, PIPE_BODY_HEIGHT);
+            pipeBodyBoxCollider2D.size = new Vector2(pipeBodyWidth, PIPE_BODY_HEIGHT);
+            pipeBodyBoxCollider2D.offset = new Vector2(pipeBodyWidth * 0.5f, 0f);
 
         }
 
