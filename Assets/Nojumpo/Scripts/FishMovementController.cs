@@ -20,6 +20,7 @@ namespace Nojumpo.Scripts
         }
         
         void Update() {
+            transform.eulerAngles = new Vector3(0, 0, _fishRigidbody2D.velocity.y * 0.4f);
             if (_jumpInput)
             {
                 Jump();
