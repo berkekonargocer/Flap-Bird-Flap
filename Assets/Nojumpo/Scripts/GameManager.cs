@@ -15,6 +15,7 @@ namespace Nojumpo.Scripts
             InitializeSingleton();
         }
 
+        
 
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
         void InitializeSingleton() {

@@ -1,4 +1,6 @@
 using System;
+using Nojumpo.Managers;
+using Nojumpo.ScriptableObjects.Datas.Variable;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -9,10 +11,12 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         IObjectPool<Pipe> _pipePool;
 
-        const float FISH_X_POSITION = 0.0f;
+        const float FISH_X_POSITION = -35.0f;
         const float CAMERA_X_BOUND = -80.0f;
 
         bool _isOutOfCameraXBound = false;
+        bool _isScored;
+        
         [SerializeField] float pipeMoveSpeed = 10.0f;
         
 
@@ -23,15 +27,16 @@ namespace Nojumpo
             {
                 _pipePool?.Release(this);
                 _isOutOfCameraXBound = false;
+                _isScored = false;
             }
             
             MoveLeft();
             
-            if (IsPassedTheFish())
+            if (IsPassedTheFish() && !_isScored)
             {
-                
+                ScoreManager.Instance.RaiseOnAddScoreEvent(1);
+                _isScored = true;
             }
-
         }
 
 
@@ -47,7 +52,7 @@ namespace Nojumpo
             }
         }
         bool IsPassedTheFish() {
-            return transform.position.x < FISH_X_POSITION;
+            return transform.position.x <= FISH_X_POSITION;
         }
 
         

@@ -112,8 +112,7 @@ namespace Nojumpo.Scripts
                 _pipePool.Get();
                 yield return new WaitForSeconds(PIPE_SPAWN_RATE);
             }
-
-            Debug.Log("End Of For Loop");
+            
             _minGapYPosition -= GAP_Y_POSITION_SCALE_AMOUNT;
             _maxGapYPosition += GAP_Y_POSITION_SCALE_AMOUNT;
             _gapSize -= GAP_SIZE_SCALE_AMOUNT;

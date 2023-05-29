@@ -10,10 +10,8 @@ namespace Nojumpo.Scripts
         public static AssetReferences Instance { get { return _instance; } }
 
         [Header("ASSETS")]
-        public Sprite PipeHeadSprite;
         public Pipe PipePrefab;
-        public Transform PipeBodyPrefab;
-        public Transform PipeHeadPrefab;
+
 
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void Awake() {

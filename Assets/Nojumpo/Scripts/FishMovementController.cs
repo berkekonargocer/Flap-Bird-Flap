@@ -11,7 +11,7 @@ namespace Nojumpo.Scripts
 
         bool _jumpInput;
         
-        const int JUMP_AMOUNT = 50;
+        const int JUMP_AMOUNT = 40;
         
         
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
