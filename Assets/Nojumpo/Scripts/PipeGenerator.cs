@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Nojumpo.Scripts
@@ -8,12 +9,23 @@ namespace Nojumpo.Scripts
         const float PIPE_BODY_HEIGHT = 1.0f;
         const float PIPE_BODY_SCALE = 5.0f;
         const float PIPE_HEAD_SCALE = 3.5f;
+        
         const float CAMERA_ORTHO_SIZE = 50;
+        
+        const int PIPE_SPAWN_AMOUNT_TO_INCREASE_DIFFICULTY = 20;
+        const float PIPE_SPAWN_X_POSITION = 35;
+        const float PIPE_CREATION_WAIT_TIME = 2.0f;
+        const float GAP_Y_POSITION_SCALE_AMOUNT = 2.0f;
+        const float GAP_SIZE_SCALE_AMOUNT = 2.0f;
+        
+        float _minGapYPosition = 40.0f;
+        float _maxGapYPosition = 60.0f;
+        float _gapSize = 26f;
 
-
+        
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Start() {
-            CreatePipesWithGap(15f, 15f, 10f);
+            StartCoroutine(nameof(CreatePipesWithGapPeriodically));
         }
 
 
@@ -49,9 +61,25 @@ namespace Nojumpo.Scripts
 
         }
 
-        void CreatePipesWithGap(float yGap, float gapSize, float xPosition) {
-            CreatePipe((yGap - gapSize * 0.5f) / 5, xPosition, true);
-            CreatePipe((CAMERA_ORTHO_SIZE * 2 - yGap - gapSize * 0.5f) / 5, xPosition, false);
+        void CreatePipesWithGap(float gapYPosition, float gapSize, float xPosition) {
+            CreatePipe((gapYPosition - gapSize * 0.5f) / 5, xPosition, true);
+            CreatePipe((CAMERA_ORTHO_SIZE * 2 - gapYPosition - gapSize * 0.5f) / 5, xPosition, false);
+        }
+
+        IEnumerator CreatePipesWithGapPeriodically() {
+            
+            for (int i = 0; i < PIPE_SPAWN_AMOUNT_TO_INCREASE_DIFFICULTY; i++)
+            {
+                float gapYPosition = Random.Range(_minGapYPosition, _maxGapYPosition + 1);
+                CreatePipesWithGap(gapYPosition, _gapSize, PIPE_SPAWN_X_POSITION);
+                yield return new WaitForSeconds(PIPE_CREATION_WAIT_TIME);
+            }
+
+            _minGapYPosition -= GAP_Y_POSITION_SCALE_AMOUNT;
+            _maxGapYPosition += GAP_Y_POSITION_SCALE_AMOUNT;
+            _gapSize -= GAP_SIZE_SCALE_AMOUNT;
+
+            StartCoroutine(nameof(CreatePipesWithGapPeriodically));
         }
     }
 }
