@@ -26,7 +26,7 @@ namespace Nojumpo.Managers
         }
 
         void UpdateHighScoreText() {
-            highScoreText.text = $"{ScoreManager.Instance.HighScore.Value}";
+            highScoreText.text = $"High Score: {ScoreManager.Instance.HighScore.Value}";
         }
     }
 }

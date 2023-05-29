@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1959659723234144204}
   m_Layer: 0
   m_Name: Pipe Body
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 3488217429262755503}
   m_Layer: 0
   m_Name: Pipe Head
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 1558213652975610332}
   m_Layer: 0
   m_Name: Pipe Head
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1735774451950334567}
   m_Layer: 0
   m_Name: Pipe Body
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 1122099479350509382}
   m_Layer: 0
   m_Name: Pipe 2
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 4300335851045734243}
   m_Layer: 0
   m_Name: Gapped Pipes
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,7 +531,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &4300335851045734243
 MonoBehaviour:
@@ -545,7 +545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00180165c866e541908db5c511cb8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: {fileID: 11400000, guid: 79acf72130d1b0f478d1272ce0243c55, type: 2}
   pipeMoveSpeed: 10
 --- !u!1 &8566225663401460666
 GameObject:
@@ -558,7 +557,7 @@ GameObject:
   - component: {fileID: 2816410155476235361}
   m_Layer: 0
   m_Name: Pipe 1
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

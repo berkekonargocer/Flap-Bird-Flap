@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Nojumpo.Enums;
 using UnityEngine;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
@@ -109,6 +110,9 @@ namespace Nojumpo.Scripts
 
             for (int i = 0; i < PIPE_SPAWN_AMOUNT_TO_INCREASE_DIFFICULTY; i++)
             {
+                if (GameManager.Instance.CurrentGameState == GameState.DEAD)
+                    StopCoroutine(nameof(CreatePipesWithGapPeriodically));
+                
                 _pipePool.Get();
                 yield return new WaitForSeconds(PIPE_SPAWN_RATE);
             }

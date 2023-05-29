@@ -1,3 +1,5 @@
+using System;
+using Nojumpo.Enums;
 using UnityEngine;
 
 namespace Nojumpo.Scripts
@@ -9,13 +11,25 @@ namespace Nojumpo.Scripts
         static GameManager _instance;
         public static GameManager Instance { get { return _instance; } }
 
-
-        // ------------------------ UNITY BUILT-IN METHODS ------------------------
-        void Awake() {
-            InitializeSingleton();
-        }
+        public event Action OnDie;
+        public GameState CurrentGameState { get; private set; } = GameState.READYTOPLAY;
 
         
+        // ------------------------ UNITY BUILT-IN METHODS ------------------------
+        void OnEnable() {
+            OnDie += Die;
+        }
+
+        void OnDisable() {
+            OnDie -= Die;
+        }
+
+        void Awake() {
+            InitializeSingleton();
+            
+            SetCurrentGameState(GameState.PLAYING);
+        }
+
 
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
         void InitializeSingleton() {
@@ -28,6 +42,20 @@ namespace Nojumpo.Scripts
             {
                 Destroy(gameObject);
             }
+        }
+
+        void Die() {
+            CurrentGameState = GameState.DEAD;
+        }
+        
+        
+        // ------------------------ CUSTOM PUBLIC METHODS -------------------------
+        public void SetCurrentGameState(GameState gameState) {
+            CurrentGameState = gameState;
+        }
+        
+        public void RaiseOnDieEvent() {
+            OnDie?.Invoke();
         }
     }
 }

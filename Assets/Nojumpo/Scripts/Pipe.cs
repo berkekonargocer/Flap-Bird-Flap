@@ -1,6 +1,8 @@
 using System;
+using Nojumpo.Enums;
 using Nojumpo.Managers;
 using Nojumpo.ScriptableObjects.Datas.Variable;
+using Nojumpo.Scripts;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -22,6 +24,9 @@ namespace Nojumpo
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Update() {
+            if (GameManager.Instance.CurrentGameState == GameState.DEAD)
+                return;
+            
             CheckIsOutOfCameraXBound();
             if (_isOutOfCameraXBound)
             {
