@@ -1,5 +1,6 @@
 using System;
 using Nojumpo.ScriptableObjects.Datas.Variable;
+using Nojumpo.Scripts;
 using UnityEngine;
 
 namespace Nojumpo.Managers
@@ -22,10 +23,12 @@ namespace Nojumpo.Managers
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             OnAddScore += currentScore.AddValue;
+            GameManager.Instance.OnDie += UpdateHighScore;
         }
 
         void OnDisable() {
             OnAddScore -= currentScore.AddValue;
+            GameManager.Instance.OnDie -= UpdateHighScore;
         }
 
         void Awake() {
@@ -46,7 +49,18 @@ namespace Nojumpo.Managers
             }
         }
 
+        bool IsCurrentScoreMoreThanHighScore() {
+            return currentScore.Value > highScore.Value;
+        }
 
+        void UpdateHighScore() {
+            if (IsCurrentScoreMoreThanHighScore())
+            {
+                highScore.Value = currentScore.Value;
+            }
+        }
+        
+        
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void RaiseOnAddScoreEvent(float scoreToAdd) {
             OnAddScore?.Invoke(scoreToAdd);

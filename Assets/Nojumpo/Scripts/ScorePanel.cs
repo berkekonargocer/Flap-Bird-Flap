@@ -1,3 +1,4 @@
+using Nojumpo.Scripts;
 using TMPro;
 using UnityEngine;
 
@@ -13,10 +14,12 @@ namespace Nojumpo.Managers
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             ScoreManager.Instance.OnAddScore += UpdateCurrentScoreText;
+            GameManager.Instance.OnDie += UpdateHighScoreText;
         }
 
         void OnDisable() {
             ScoreManager.Instance.OnAddScore -= UpdateCurrentScoreText;
+            GameManager.Instance.OnDie -= UpdateHighScoreText;
         }
 
 
