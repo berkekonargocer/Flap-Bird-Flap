@@ -9,10 +9,11 @@ namespace Nojumpo.Scripts
     {
         // -------------------------------- FIELDS ---------------------------------
         Rigidbody2D _fishRigidbody2D;
-
-        bool _jumpInput;
         
-        const int JUMP_AMOUNT = 40;
+        const int SWIM_AMOUNT = 40;
+        bool _swimInput;
+        
+        [SerializeField] AudioSource swimAudio;
         
         
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -26,9 +27,9 @@ namespace Nojumpo.Scripts
             if (GameManager.Instance.CurrentGameState == GameState.DEAD)
                 return;
             
-            if (_jumpInput)
+            if (_swimInput)
             {
-                Jump();
+                Swim();
             }
         }
 
@@ -39,11 +40,12 @@ namespace Nojumpo.Scripts
         }
 
         void OnJump(InputValue inputValue) {
-            _jumpInput = inputValue.isPressed;
+            _swimInput = inputValue.isPressed;
         }
         
-        void Jump() {
-            _fishRigidbody2D.velocity = Vector2.up * JUMP_AMOUNT;
+        void Swim() {
+            _fishRigidbody2D.velocity = Vector2.up * SWIM_AMOUNT;
+            swimAudio.Play();
         }
 
         // ------------------------- CUSTOM PUBLIC METHODS -------------------------

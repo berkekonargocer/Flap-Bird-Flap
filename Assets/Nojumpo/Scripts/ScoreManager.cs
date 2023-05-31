@@ -18,6 +18,9 @@ namespace Nojumpo.Managers
         [SerializeField] FloatVariableSO highScore;
         public FloatVariableSO HighScore { get { return highScore; } }
 
+        [SerializeField] AudioSource scoreAudio;
+        
+        
         public event Action<float> OnAddScore;
 
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
@@ -59,11 +62,12 @@ namespace Nojumpo.Managers
                 highScore.Value = currentScore.Value;
             }
         }
-        
+
         
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void RaiseOnAddScoreEvent(float scoreToAdd) {
             OnAddScore?.Invoke(scoreToAdd);
+            scoreAudio.Play();
         }
 
         public void ResetCurrentScore() {

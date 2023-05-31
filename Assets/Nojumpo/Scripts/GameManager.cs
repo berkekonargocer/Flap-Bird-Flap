@@ -14,6 +14,8 @@ namespace Nojumpo.Scripts
         public event Action OnDie;
         public GameState CurrentGameState { get; private set; } = GameState.READYTOPLAY;
 
+        [SerializeField] AudioSource dieAudio;
+        
         
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
@@ -56,6 +58,7 @@ namespace Nojumpo.Scripts
         
         public void RaiseOnDieEvent() {
             OnDie?.Invoke();
+            dieAudio.Play();
         }
     }
 }
