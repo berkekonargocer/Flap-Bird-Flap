@@ -1,3 +1,4 @@
+using Nojumpo.Enums;
 using Nojumpo.Scripts;
 using UnityEngine;
 
@@ -11,8 +12,10 @@ namespace Nojumpo
         void OnTriggerEnter2D(Collider2D other) {
             if (other.gameObject.CompareTag("Pipe"))
             {
-                Debug.Log("PIPED");
-                GameManager.Instance.RaiseOnDieEvent();
+                if (GameManager.Instance.CurrentGameState != GameState.DEAD)
+                {
+                    GameManager.Instance.RaiseOnDieEvent();
+                }
             }
         }
 
