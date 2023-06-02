@@ -15,8 +15,8 @@ namespace Nojumpo.Managers
         [SerializeField] FloatVariableSO currentScore;
         public FloatVariableSO CurrentScore { get { return currentScore; } }
 
-        [SerializeField] FloatVariableSO highScore;
-        public FloatVariableSO HighScore { get { return highScore; } }
+        [SerializeField] FloatVariableSO bestScore;
+        public FloatVariableSO BestScore { get { return bestScore; } }
 
         [SerializeField] AudioSource scoreAudio;
         
@@ -53,13 +53,13 @@ namespace Nojumpo.Managers
         }
 
         bool IsCurrentScoreMoreThanHighScore() {
-            return currentScore.Value > highScore.Value;
+            return currentScore.Value > bestScore.Value;
         }
 
         void UpdateHighScore() {
             if (IsCurrentScoreMoreThanHighScore())
             {
-                highScore.Value = currentScore.Value;
+                bestScore.Value = currentScore.Value;
             }
         }
 
