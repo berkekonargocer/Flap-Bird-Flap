@@ -2,6 +2,7 @@ using System;
 using Nojumpo.ScriptableObjects.Datas.Variable;
 using Nojumpo.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Nojumpo.Managers
 {
@@ -18,18 +19,20 @@ namespace Nojumpo.Managers
         [SerializeField] FloatVariableSO bestScore;
         public FloatVariableSO BestScore { get { return bestScore; } }
 
-        [SerializeField] AudioSource scoreAudio;
+        AudioSource _scoreAudio;
         
         
         public event Action<float> OnAddScore;
 
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
+            SceneManager.sceneLoaded += SetComponents;
             OnAddScore += currentScore.AddValue;
             GameManager.Instance.OnDie += UpdateHighScore;
         }
 
         void OnDisable() {
+            SceneManager.sceneLoaded -= SetComponents;
             OnAddScore -= currentScore.AddValue;
             GameManager.Instance.OnDie -= UpdateHighScore;
         }
@@ -52,6 +55,9 @@ namespace Nojumpo.Managers
             }
         }
 
+        void SetComponents(Scene scene, LoadSceneMode loadSceneMode) {
+            _scoreAudio = GameObject.FindWithTag("Audios/POINT").GetComponent<AudioSource>();
+        }
         bool IsCurrentScoreMoreThanHighScore() {
             return currentScore.Value > bestScore.Value;
         }
@@ -67,7 +73,7 @@ namespace Nojumpo.Managers
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void RaiseOnAddScoreEvent(float scoreToAdd) {
             OnAddScore?.Invoke(scoreToAdd);
-            scoreAudio.Play();
+            _scoreAudio.Play();
         }
 
         public void ResetCurrentScore() {

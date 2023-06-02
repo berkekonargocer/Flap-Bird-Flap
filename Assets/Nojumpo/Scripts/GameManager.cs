@@ -1,6 +1,7 @@
 using System;
 using Nojumpo.Enums;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Nojumpo.Scripts
 {
@@ -14,21 +15,22 @@ namespace Nojumpo.Scripts
         public event Action OnDie;
         public GameState CurrentGameState { get; private set; } = GameState.READYTOPLAY;
 
-        [SerializeField] AudioSource dieAudio;
+        AudioSource _dieAudio;
         
         
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
+            SceneManager.sceneLoaded += SetComponents;
             OnDie += Die;
         }
 
         void OnDisable() {
+            SceneManager.sceneLoaded -= SetComponents;
             OnDie -= Die;
         }
 
         void Awake() {
             InitializeSingleton();
-            
             SetCurrentGameState(GameState.PLAYING);
         }
 
@@ -46,7 +48,12 @@ namespace Nojumpo.Scripts
             }
         }
 
+        void SetComponents(Scene scene, LoadSceneMode loadSceneMode) {
+            _dieAudio = GameObject.FindWithTag("Audios/DIE").GetComponent<AudioSource>();
+        }
+        
         void Die() {
+            _dieAudio.Play();
             CurrentGameState = GameState.DEAD;
         }
         
@@ -58,7 +65,6 @@ namespace Nojumpo.Scripts
         
         public void RaiseOnDieEvent() {
             OnDie?.Invoke();
-            dieAudio.Play();
         }
     }
 }
