@@ -2132,7 +2132,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 4
   m_Sprite: {fileID: 983909472, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2212,6 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2803c115087b2f458e8f26f90a03e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashOnHitColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
 --- !u!95 &1201118229
 Animator:
   serializedVersion: 5
