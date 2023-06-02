@@ -11,7 +11,9 @@ namespace Nojumpo.Scripts
 
         [Header("ASSETS")]
         public Pipe PipePrefab;
-
+        public Sprite SilverMedalSprite;
+        public Sprite GoldenMedalSprite;
+        
 
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void Awake() {

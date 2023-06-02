@@ -213,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GoldCoin
+      name: GoldenMedal
       rect:
         serializedVersion: 2
         x: 1454
@@ -318,7 +318,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SilverCoin
+      name: SilverMedal
       rect:
         serializedVersion: 2
         x: 1752
@@ -630,7 +630,7 @@ TextureImporter:
       DeadFish: 1602223553
       WhiteCoin: -451598512
       Pipe Head: -216399230
-      SilverCoin: 633909314
+      SilverMedal: 633909314
       New: -1990618887
       GameOver: 2104733438
       flappy_fish_11: 10320717
@@ -638,12 +638,12 @@ TextureImporter:
       UpArrow: 421949693
       TapLeftArrow: -425374489
       Panel: 744862147
-      GoldCoin: -1071473475
       Fish03: -585129370
       Background: -21248841
       YellowCoin: 368653403
       Pipe Body: 1066214872
       TapRightArrow: -425374489
+      GoldenMedal: -1071473475
       Ground: 710082249
       PointHand: 1736415890
       RestartButton: -1847888831

@@ -28,13 +28,13 @@ namespace Nojumpo.Managers
         void OnEnable() {
             SceneManager.sceneLoaded += SetComponents;
             OnAddScore += currentScore.AddValue;
-            GameManager.Instance.OnDie += UpdateHighScore;
+            GameManager.Instance.OnDie += UpdateBestScore;
         }
 
         void OnDisable() {
             SceneManager.sceneLoaded -= SetComponents;
             OnAddScore -= currentScore.AddValue;
-            GameManager.Instance.OnDie -= UpdateHighScore;
+            GameManager.Instance.OnDie -= UpdateBestScore;
         }
 
         void Awake() {
@@ -62,7 +62,7 @@ namespace Nojumpo.Managers
             return currentScore.Value > bestScore.Value;
         }
 
-        void UpdateHighScore() {
+        void UpdateBestScore() {
             if (IsCurrentScoreMoreThanHighScore())
             {
                 bestScore.Value = currentScore.Value;

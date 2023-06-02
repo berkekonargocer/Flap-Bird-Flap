@@ -312,6 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PipePrefab: {fileID: 4300335851045734243, guid: 8aa40a6afc22b754cb70c1e8619901ea, type: 3}
+  SilverMedalSprite: {fileID: 633909314, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+  GoldenMedalSprite: {fileID: -1071473475, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
 --- !u!4 &113683821
 Transform:
   m_ObjectHideFlags: 0
@@ -1149,7 +1151,7 @@ GameObject:
   - component: {fileID: 783412894}
   - component: {fileID: 783412893}
   m_Layer: 5
-  m_Name: Current Score Value
+  m_Name: Current Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1426,7 +1428,7 @@ GameObject:
   - component: {fileID: 838760238}
   - component: {fileID: 838760237}
   m_Layer: 5
-  m_Name: Best Score Value
+  m_Name: Best Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1865,6 +1867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee22063e778e8414b8f3db2ae70af190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  medalImage: {fileID: 1240147008}
+  scoreText: {fileID: 783412893}
+  bestScoreText: {fileID: 838760237}
 --- !u!1 &1175229126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,7 +2321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1071473475, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
