@@ -297,7 +297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SilverCoin
+      name: WhiteCoin
       rect:
         serializedVersion: 2
         x: 1457
@@ -318,7 +318,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrayCoin
+      name: SilverCoin
       rect:
         serializedVersion: 2
         x: 1752
@@ -628,11 +628,11 @@ TextureImporter:
       flappy_fish_4: -170477833
       flappy_fish_9: -451598512
       DeadFish: 1602223553
+      WhiteCoin: -451598512
       Pipe Head: -216399230
-      SilverCoin: -451598512
+      SilverCoin: 633909314
       New: -1990618887
       GameOver: 2104733438
-      GrayCoin: 633909314
       flappy_fish_11: 10320717
       flappy_fish_10: 1736415890
       UpArrow: 421949693
