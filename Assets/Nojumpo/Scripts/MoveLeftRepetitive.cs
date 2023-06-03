@@ -9,7 +9,7 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         [SerializeField] float moveSpeed;
         const float MAX_X_POSITION = -49.5f;
-        const float INITIAL_X_POSITION = 80.65f;
+        const float INITIAL_X_POSITION = 80.5f;
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void Update() {

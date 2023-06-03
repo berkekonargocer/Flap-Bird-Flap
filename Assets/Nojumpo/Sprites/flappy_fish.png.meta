@@ -192,7 +192,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DeadFish
+      name: ReadyToPlayFish
       rect:
         serializedVersion: 2
         x: 1015
@@ -627,7 +627,6 @@ TextureImporter:
       Fish01: 983909472
       flappy_fish_4: -170477833
       flappy_fish_9: -451598512
-      DeadFish: 1602223553
       WhiteCoin: -451598512
       Pipe Head: -216399230
       SilverMedal: 633909314
@@ -649,6 +648,7 @@ TextureImporter:
       RestartButton: -1847888831
       Fish02: -1963896991
       GetReady: 1982401099
+      ReadyToPlayFish: 421949693
       flappy_fish_23: 1982401099
   spritePackingTag: 
   pSDRemoveMatte: 0
