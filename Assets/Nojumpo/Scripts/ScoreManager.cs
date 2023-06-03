@@ -1,4 +1,5 @@
 using System;
+using Nojumpo.Enums;
 using Nojumpo.ScriptableObjects.Datas.Variable;
 using Nojumpo.Scripts;
 using UnityEngine;
@@ -29,12 +30,14 @@ namespace Nojumpo.Managers
             SceneManager.sceneLoaded += SetComponents;
             OnAddScore += currentScore.AddValue;
             GameManager.Instance.OnDie += UpdateBestScore;
+            GameManager.Instance.OnGameStart += ResetCurrentScore;
         }
 
         void OnDisable() {
             SceneManager.sceneLoaded -= SetComponents;
             OnAddScore -= currentScore.AddValue;
             GameManager.Instance.OnDie -= UpdateBestScore;
+            GameManager.Instance.OnGameStart -= ResetCurrentScore;
         }
 
         void Awake() {
@@ -68,16 +71,17 @@ namespace Nojumpo.Managers
                 bestScore.Value = currentScore.Value;
             }
         }
-
         
+        void ResetCurrentScore(GameState gameState) {
+            currentScore.ResetValue();
+        }
+
+
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void RaiseOnAddScoreEvent(float scoreToAdd) {
             OnAddScore?.Invoke(scoreToAdd);
             _scoreAudio.Play();
         }
 
-        public void ResetCurrentScore() {
-            currentScore.ResetValue();
-        }
     }
 }
