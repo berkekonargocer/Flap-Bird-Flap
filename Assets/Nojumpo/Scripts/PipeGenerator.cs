@@ -33,17 +33,20 @@ namespace Nojumpo.Scripts
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
+        void OnEnable() {
+            GameManager.Instance.OnGameStart += StartPipeGeneration;
+        }
+        
+        void OnDisable() {
+            GameManager.Instance.OnGameStart -= StartPipeGeneration;
+        }
+        
         void Awake() {
             _pipePool = new ObjectPool<Pipe>(CreatePipe, OnGetPipe, OnReleasePipe, OnDestroyPipe, checkCollection, defaultAmount, maxAmount);
         }
 
-        void Start() {
-            StartCoroutine(nameof(CreatePipesWithGapPeriodically));
-        }
-
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
-
         Pipe CreatePipe() {
             Pipe pipe = Instantiate(AssetReferences.Instance.PipePrefab, transform.position, Quaternion.identity);
             pipe.SetPool(_pipePool);
@@ -121,6 +124,10 @@ namespace Nojumpo.Scripts
             _maxGapYPosition += GAP_Y_POSITION_SCALE_AMOUNT;
             _gapSize -= GAP_SIZE_SCALE_AMOUNT;
 
+            StartCoroutine(nameof(CreatePipesWithGapPeriodically));
+        }
+
+        void StartPipeGeneration(GameState gameState) {
             StartCoroutine(nameof(CreatePipesWithGapPeriodically));
         }
     }

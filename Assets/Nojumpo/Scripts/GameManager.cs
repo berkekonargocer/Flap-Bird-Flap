@@ -12,6 +12,7 @@ namespace Nojumpo.Scripts
         static GameManager _instance;
         public static GameManager Instance { get { return _instance; } }
 
+        public event Action<GameState> OnGameStart; 
         public event Action OnDie;
         public GameState CurrentGameState { get; private set; } = GameState.READYTOPLAY;
 
@@ -22,16 +23,17 @@ namespace Nojumpo.Scripts
         void OnEnable() {
             SceneManager.sceneLoaded += SetComponents;
             OnDie += Die;
+            OnGameStart += SetCurrentGameState;
         }
 
         void OnDisable() {
             SceneManager.sceneLoaded -= SetComponents;
             OnDie -= Die;
+            OnGameStart -= SetCurrentGameState;
         }
 
         void Awake() {
             InitializeSingleton();
-            SetCurrentGameState(GameState.PLAYING);
         }
 
 
@@ -65,6 +67,10 @@ namespace Nojumpo.Scripts
         
         public void RaiseOnDieEvent() {
             OnDie?.Invoke();
+        }
+
+        public void RaiseOnGameStartEvent(GameState gameState) {
+            OnGameStart?.Invoke(gameState);
         }
     }
 }
