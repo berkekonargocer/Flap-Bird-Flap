@@ -21,8 +21,8 @@ namespace Nojumpo.Managers
         public FloatVariableSO BestScore { get { return bestScore; } }
 
         AudioSource _scoreAudio;
-        
-        
+
+
         public event Action<float> OnAddScore;
 
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
@@ -61,6 +61,7 @@ namespace Nojumpo.Managers
         void SetComponents(Scene scene, LoadSceneMode loadSceneMode) {
             _scoreAudio = GameObject.FindWithTag("Audios/POINT").GetComponent<AudioSource>();
         }
+
         bool IsCurrentScoreMoreThanHighScore() {
             return currentScore.Value > bestScore.Value;
         }
@@ -71,7 +72,7 @@ namespace Nojumpo.Managers
                 bestScore.Value = currentScore.Value;
             }
         }
-        
+
         void ResetCurrentScore(GameState gameState) {
             currentScore.ResetValue();
         }
@@ -82,6 +83,5 @@ namespace Nojumpo.Managers
             OnAddScore?.Invoke(scoreToAdd);
             _scoreAudio.Play();
         }
-
     }
 }

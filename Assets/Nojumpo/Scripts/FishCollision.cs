@@ -2,7 +2,6 @@ using DG.Tweening;
 using Nojumpo.Enums;
 using Nojumpo.Scripts;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Nojumpo
 {
@@ -20,7 +19,7 @@ namespace Nojumpo
         }
         
         void OnTriggerEnter2D(Collider2D other) {
-            if (other.gameObject.CompareTag("Pipe"))
+            if (other.gameObject.CompareTag("Pipe") || other.gameObject.CompareTag("Ground"))
             {
                 if (GameManager.Instance.CurrentGameState != GameState.DEAD)
                 {

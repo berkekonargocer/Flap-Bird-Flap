@@ -60,7 +60,6 @@ namespace Nojumpo.Scripts
         }
 
         void OnReleasePipe(Pipe pipe) {
-            Debug.Log("RELEASED");
             pipe.gameObject.transform.position = new Vector3(0, 0, 0);
             pipe.gameObject.SetActive(false);
         }

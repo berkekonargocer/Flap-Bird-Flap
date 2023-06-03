@@ -13,7 +13,7 @@ namespace Nojumpo
         // -------------------------------- FIELDS ---------------------------------
         IObjectPool<Pipe> _pipePool;
 
-        const float FISH_X_POSITION = -32.0f;
+        const float FISH_X_POSITION = -40.0f;
         const float CAMERA_X_BOUND = -80.0f;
 
         bool _isOutOfCameraXBound = false;
