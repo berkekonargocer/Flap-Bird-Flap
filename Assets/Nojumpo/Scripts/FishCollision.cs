@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using Nojumpo.Enums;
 using Nojumpo.Scripts;
@@ -19,18 +20,28 @@ namespace Nojumpo
         }
         
         void OnTriggerEnter2D(Collider2D other) {
-            if (other.gameObject.CompareTag("Pipe") || other.gameObject.CompareTag("Ground"))
+            if (other.gameObject.CompareTag("Pipe"))
             {
-                if (GameManager.Instance.CurrentGameState != GameState.DEAD)
-                {
-                    FishCollisionFlash();
-                    GameManager.Instance.RaiseOnDieEvent();
-                }
+                Die();
             }
         }
 
+        void OnCollisionEnter2D(Collision2D other) {
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                Die();
+            }
+        }
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
+        void Die() {
+            if (GameManager.Instance.CurrentGameState != GameState.DEAD)
+            {
+                FishCollisionFlash();
+                GameManager.Instance.RaiseOnDieEvent();
+            }
+        }
+        
         void SetComponents() {
             _fishSpriteRenderer = GetComponent<SpriteRenderer>();
         }
