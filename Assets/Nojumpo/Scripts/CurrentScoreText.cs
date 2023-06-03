@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Nojumpo.Enums;
 using Nojumpo.Scripts;
 using TMPro;
@@ -14,19 +15,19 @@ namespace Nojumpo.Managers
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             ScoreManager.Instance.OnAddScore += UpdateCurrentScoreText;
-            GameManager.Instance.OnGameStart += ShowCurrentScoreText;
+            GameManager.Instance.OnGameStart += FadeIn;
         }
 
         void OnDisable() {
             ScoreManager.Instance.OnAddScore -= UpdateCurrentScoreText;
-            GameManager.Instance.OnGameStart -= ShowCurrentScoreText;
+            GameManager.Instance.OnGameStart -= FadeIn;
         }
 
 
         // ------------------------ CUSTOM PRIVATE METHODS ------------------------
-        void ShowCurrentScoreText(GameState gameState) {
+        void FadeIn(GameState gameState) {
             UpdateCurrentScoreText(0);
-            currentScoreText.enabled = true;
+            currentScoreText.DOFade(1, 1.0f);
         }
         
         void UpdateCurrentScoreText(float scoreToAdd) {

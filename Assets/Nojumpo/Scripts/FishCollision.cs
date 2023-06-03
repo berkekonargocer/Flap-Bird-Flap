@@ -40,9 +40,5 @@ namespace Nojumpo
             _fishSpriteRenderer.color = flashOnHitColor;
             _fishSpriteRenderer.DOColor(Color.white, 0.75f);
         }
-
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
     }
 }

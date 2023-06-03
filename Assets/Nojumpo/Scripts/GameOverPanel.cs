@@ -65,8 +65,5 @@ namespace Nojumpo
             scoreText.text = $"{ScoreManager.Instance.CurrentScore.Value}";
             bestScoreText.text = $"{ScoreManager.Instance.BestScore.Value}";
         }
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
     }
 }

@@ -34,8 +34,5 @@ namespace Nojumpo
             Transform objectTransform = transform;
             objectTransform.position = new Vector3(INITIAL_X_POSITION, objectTransform.position.y);
         }
-
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
     }
 }

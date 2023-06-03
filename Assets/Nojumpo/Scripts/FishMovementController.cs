@@ -65,9 +65,5 @@ namespace Nojumpo.Scripts
         void SetRigidbodyToDynamic(GameState gameState) {
             _fishRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         }
-        
-        
-        // ------------------------- CUSTOM PUBLIC METHODS -------------------------
-
     }
 }
