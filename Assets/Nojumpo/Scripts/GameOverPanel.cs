@@ -63,7 +63,7 @@ namespace Nojumpo
         
         void UpdateScoreTexts() {
             scoreText.text = $"{ScoreManager.Instance.CurrentScore.Value}";
-            bestScoreText.text = $"{ScoreManager.Instance.BestScore.Value}";
+            bestScoreText.text = $"{PlayerPrefs.GetInt("Best Score")}";
         }
     }
 }

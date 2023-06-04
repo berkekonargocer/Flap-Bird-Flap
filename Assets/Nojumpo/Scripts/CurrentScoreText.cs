@@ -16,11 +16,13 @@ namespace Nojumpo.Managers
         void OnEnable() {
             ScoreManager.Instance.OnAddScore += UpdateCurrentScoreText;
             GameManager.Instance.OnGameStart += FadeIn;
+            GameManager.Instance.OnDie += FadeOut;
         }
 
         void OnDisable() {
             ScoreManager.Instance.OnAddScore -= UpdateCurrentScoreText;
             GameManager.Instance.OnGameStart -= FadeIn;
+            GameManager.Instance.OnDie -= FadeOut;
         }
 
 
@@ -29,8 +31,12 @@ namespace Nojumpo.Managers
             UpdateCurrentScoreText(0);
             currentScoreText.DOFade(1, 1.0f);
         }
+
+        void FadeOut() {
+            currentScoreText.DOFade(0, 1.0f);
+        }
         
-        void UpdateCurrentScoreText(float scoreToAdd) {
+        void UpdateCurrentScoreText(int scoreToAdd) {
             currentScoreText.text = $"{ScoreManager.Instance.CurrentScore.Value}";
         }
     }

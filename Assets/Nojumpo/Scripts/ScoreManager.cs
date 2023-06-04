@@ -2,6 +2,7 @@ using System;
 using Nojumpo.Enums;
 using Nojumpo.ScriptableObjects.Datas.Variable;
 using Nojumpo.Scripts;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,17 +15,14 @@ namespace Nojumpo.Managers
         static ScoreManager _instance;
         public static ScoreManager Instance { get { return _instance; } }
 
-        [SerializeField] FloatVariableSO currentScore;
-        public FloatVariableSO CurrentScore { get { return currentScore; } }
-
-        [SerializeField] FloatVariableSO bestScore;
-        public FloatVariableSO BestScore { get { return bestScore; } }
+        [SerializeField] IntVariableSO currentScore;
+        public IntVariableSO CurrentScore { get { return currentScore; } }
 
         AudioSource _scoreAudio;
 
+        public event Action<int> OnAddScore;
 
-        public event Action<float> OnAddScore;
-
+        
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             SceneManager.sceneLoaded += SetComponents;
@@ -42,6 +40,7 @@ namespace Nojumpo.Managers
 
         void Awake() {
             InitializeSingleton();
+            
         }
 
 
@@ -63,13 +62,13 @@ namespace Nojumpo.Managers
         }
 
         bool IsCurrentScoreMoreThanHighScore() {
-            return currentScore.Value > bestScore.Value;
+            return currentScore.Value > PlayerPrefs.GetInt("Best Score");
         }
 
         void UpdateBestScore() {
             if (IsCurrentScoreMoreThanHighScore())
             {
-                bestScore.Value = currentScore.Value;
+                PlayerPrefs.SetInt("Best Score", currentScore.Value);
             }
         }
 
@@ -79,7 +78,7 @@ namespace Nojumpo.Managers
 
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
-        public void RaiseOnAddScoreEvent(float scoreToAdd) {
+        public void RaiseOnAddScoreEvent(int scoreToAdd) {
             OnAddScore?.Invoke(scoreToAdd);
             _scoreAudio.Play();
         }
