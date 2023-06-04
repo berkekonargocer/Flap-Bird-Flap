@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using Nojumpo.Enums;
 using Nojumpo.Scripts;
