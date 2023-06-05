@@ -2647,10 +2647,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4296,7 +4296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: {fileID: 11400000, guid: 79acf72130d1b0f478d1272ce0243c55, type: 2}
-  bestScore: {fileID: 11400000, guid: e967b3d0692d4b64db53498e3c4b89fd, type: 2}
 --- !u!4 &2045670104
 Transform:
   m_ObjectHideFlags: 0
