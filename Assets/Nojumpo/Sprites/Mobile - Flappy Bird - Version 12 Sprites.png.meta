@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_0
+      name: Background Day
       rect:
         serializedVersion: 2
         x: 0
@@ -150,7 +150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_1
+      name: Background Night
       rect:
         serializedVersion: 2
         x: 146
@@ -171,7 +171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_2
+      name: Ground
       rect:
         serializedVersion: 2
         x: 292
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_11
+      name: Get Ready
       rect:
         serializedVersion: 2
         x: 295
@@ -360,7 +360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_12
+      name: Game Over
       rect:
         serializedVersion: 2
         x: 395
@@ -423,7 +423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_18
+      name: Get Ready Bird
       rect:
         serializedVersion: 2
         x: 310
@@ -654,7 +654,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_32
+      name: Play
       rect:
         serializedVersion: 2
         x: 354
@@ -927,7 +927,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_45
+      name: Game Over Panel
       rect:
         serializedVersion: 2
         x: 3
@@ -948,7 +948,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_46
+      name: Medal Silver
       rect:
         serializedVersion: 2
         x: 121
@@ -990,7 +990,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_48
+      name: Medal Golden
       rect:
         serializedVersion: 2
         x: 121
@@ -1116,7 +1116,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_55
+      name: Blue Bird 2
       rect:
         serializedVersion: 2
         x: 115
@@ -1158,7 +1158,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_57
+      name: Blue Bird 3
       rect:
         serializedVersion: 2
         x: 115
@@ -1431,7 +1431,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_74
+      name: Medal Silver 2
       rect:
         serializedVersion: 2
         x: 112
@@ -1473,7 +1473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_76
+      name: Medal Bronze
       rect:
         serializedVersion: 2
         x: 112
@@ -1578,7 +1578,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_82
+      name: Blue Bird 1
       rect:
         serializedVersion: 2
         x: 87
@@ -1620,7 +1620,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Version 12 Sprites_84
+      name: New Best
       rect:
         serializedVersion: 2
         x: 112
@@ -1670,7 +1670,7 @@ TextureImporter:
         width: 26
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1697,7 +1697,6 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_17: -2094024789
       Mobile - Flappy Bird - Version 12 Sprites_64: -1637929928
       Mobile - Flappy Bird - Version 12 Sprites_71: -288055005
-      Mobile - Flappy Bird - Version 12 Sprites_57: -379916905
       Mobile - Flappy Bird - Version 12 Sprites_4: 1295783627
       Mobile - Flappy Bird - Version 12 Sprites_37: 675781677
       Mobile - Flappy Bird - Version 12 Sprites_83: 576777709
@@ -1714,19 +1713,18 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_8: 485647337
       Mobile - Flappy Bird - Version 12 Sprites_40: 567309881
       Mobile - Flappy Bird - Version 12 Sprites_54: -1832924876
+      Background Day: 763072743
+      Game Over Panel: -1116417016
       Mobile - Flappy Bird - Version 12 Sprites_66: -858553193
       Mobile - Flappy Bird - Version 12 Sprites_75: 2053382509
       Mobile - Flappy Bird - Version 12 Sprites_78: 2086134307
-      Mobile - Flappy Bird - Version 12 Sprites_82: 144629025
       Mobile - Flappy Bird - Version 12 Sprites_19: -902922323
-      Mobile - Flappy Bird - Version 12 Sprites_1: -1907231921
-      Mobile - Flappy Bird - Version 12 Sprites_32: -22325398
-      Mobile - Flappy Bird - Version 12 Sprites_52: -1638774304
-      Mobile - Flappy Bird - Version 12 Sprites_46: 1431296722
-      Mobile - Flappy Bird - Version 12 Sprites_12: 950972775
-      Mobile - Flappy Bird - Version 12 Sprites_41: -1622465022
-      Mobile - Flappy Bird - Version 12 Sprites_84: 1725597630
       Mobile - Flappy Bird - Version 12 Sprites_44: 1305762969
+      Get Ready: 545489935
+      Mobile - Flappy Bird - Version 12 Sprites_52: -1638774304
+      Medal Silver: 1431296722
+      Mobile - Flappy Bird - Version 12 Sprites_41: -1622465022
+      Play: -22325398
       Mobile - Flappy Bird - Version 12 Sprites_23: -1619287702
       Mobile - Flappy Bird - Version 12 Sprites_21: 306854664
       Mobile - Flappy Bird - Version 12 Sprites_25: -267575983
@@ -1736,22 +1734,28 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_79: -1743801295
       Mobile - Flappy Bird - Version 12 Sprites_33: 629981868
       Mobile - Flappy Bird - Version 12 Sprites_65: -123102888
-      Mobile - Flappy Bird - Version 12 Sprites_11: 545489935
       Mobile - Flappy Bird - Version 12 Sprites_22: 1502635641
       Mobile - Flappy Bird - Version 12 Sprites_56: -908275282
-      Mobile - Flappy Bird - Version 12 Sprites_74: 1743083458
+      New Best: 1725597630
       Mobile - Flappy Bird - Version 12 Sprites_7: 156779819
       Mobile - Flappy Bird - Version 12 Sprites_43: -1839628265
       Mobile - Flappy Bird - Version 12 Sprites_30: 1711238267
-      Mobile - Flappy Bird - Version 12 Sprites_45: -1116417016
-      Mobile - Flappy Bird - Version 12 Sprites_0: 763072743
+      Get Ready Bird: -473689203
+      Medal Bronze: 383784089
+      Ground: 1214746588
+      Blue Bird 2: -1368795982
       Mobile - Flappy Bird - Version 12 Sprites_70: -2108377306
       Mobile - Flappy Bird - Version 12 Sprites_5: -1229594100
       Mobile - Flappy Bird - Version 12 Sprites_24: 1831092676
+      Blue Bird 3: -379916905
       Mobile - Flappy Bird - Version 12 Sprites_13: -2018287498
       Mobile - Flappy Bird - Version 12 Sprites_6: 186735782
+      Background Night: -1907231921
       Mobile - Flappy Bird - Version 12 Sprites_51: -154049531
+      Medal Silver 2: 1743083458
       Mobile - Flappy Bird - Version 12 Sprites_36: 221862224
+      Game Over: 950972775
+      Blue Bird 1: 144629025
       Mobile - Flappy Bird - Version 12 Sprites_53: 504609334
       Mobile - Flappy Bird - Version 12 Sprites_62: 1057790180
       Mobile - Flappy Bird - Version 12 Sprites_27: -39915708
@@ -1762,17 +1766,13 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_77: -1540571860
       Mobile - Flappy Bird - Version 12 Sprites_10: -553972171
       Mobile - Flappy Bird - Version 12 Sprites_26: 2002636166
+      Medal Golden: 401446022
       Mobile - Flappy Bird - Version 12 Sprites_34: 1834963660
       Mobile - Flappy Bird - Version 12 Sprites_63: 1461104640
       Mobile - Flappy Bird - Version 12 Sprites_31: -534277112
       Mobile - Flappy Bird - Version 12 Sprites_50: -1453016209
-      Mobile - Flappy Bird - Version 12 Sprites_48: 401446022
-      Mobile - Flappy Bird - Version 12 Sprites_55: -1368795982
-      Mobile - Flappy Bird - Version 12 Sprites_2: 1214746588
-      Mobile - Flappy Bird - Version 12 Sprites_18: -473689203
       Mobile - Flappy Bird - Version 12 Sprites_14: -489939716
       Mobile - Flappy Bird - Version 12 Sprites_59: 606801058
-      Mobile - Flappy Bird - Version 12 Sprites_76: 383784089
       Mobile - Flappy Bird - Version 12 Sprites_47: 1370947938
       Mobile - Flappy Bird - Version 12 Sprites_72: 1077547084
       Mobile - Flappy Bird - Version 12 Sprites_35: 1974621041
