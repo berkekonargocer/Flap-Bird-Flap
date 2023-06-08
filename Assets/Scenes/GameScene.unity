@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 709526310}
   - component: {fileID: 709526311}
   m_Layer: 0
-  m_Name: Swim SFX
+  m_Name: Flap SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaec99fff5c84d4dbd6eace1da1ed89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flapAudio: {fileID: 0}
+  flapAudio: {fileID: 709526311}
 --- !u!114 &1201118227
 MonoBehaviour:
   m_ObjectHideFlags: 0
