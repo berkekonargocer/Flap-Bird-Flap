@@ -18,12 +18,15 @@ namespace Nojumpo.Scripts
 
         const float CAMERA_ORTHO_SIZE = 50;
 
-        const int PIPE_SPAWN_AMOUNT_TO_INCREASE_DIFFICULTY = 20;
         const float PIPE_SPAWN_X_POSITION = 35;
         const float PIPE_SPAWN_RATE = 2.0f;
+        
+        const int PIPE_SPAWN_AMOUNT_TO_INCREASE_DIFFICULTY = 20;
         const float GAP_Y_POSITION_SCALE_AMOUNT = 2.0f;
         const float GAP_SIZE_SCALE_AMOUNT = 2.0f;
-
+        const int MAX_SCALE_LEVEL = 6;
+        int _currentScaleLevel = 0;
+        
         float _minGapYPosition = 40.0f;
         float _maxGapYPosition = 60.0f;
         float _gapSize = 26f;
@@ -121,9 +124,13 @@ namespace Nojumpo.Scripts
                 yield return new WaitForSeconds(PIPE_SPAWN_RATE);
             }
 
-            _minGapYPosition -= GAP_Y_POSITION_SCALE_AMOUNT;
-            _maxGapYPosition += GAP_Y_POSITION_SCALE_AMOUNT;
-            _gapSize -= GAP_SIZE_SCALE_AMOUNT;
+            if (_currentScaleLevel < MAX_SCALE_LEVEL)
+            {
+                _minGapYPosition -= GAP_Y_POSITION_SCALE_AMOUNT;
+                _maxGapYPosition += GAP_Y_POSITION_SCALE_AMOUNT;
+                _gapSize -= GAP_SIZE_SCALE_AMOUNT;
+                _currentScaleLevel++;
+            }
 
             StartCoroutine(nameof(CreatePipesWithGapPeriodically));
         }

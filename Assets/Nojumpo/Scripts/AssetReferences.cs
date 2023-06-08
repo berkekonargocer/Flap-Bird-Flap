@@ -11,6 +11,7 @@ namespace Nojumpo.Scripts
 
         [Header("ASSETS")]
         public Pipe PipePrefab;
+        public Sprite BronzeMedalSprite;
         public Sprite SilverMedalSprite;
         public Sprite GoldenMedalSprite;
         

@@ -129,69 +129,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 509
-        width: 703
-        height: 1234
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 811545736a1a3544bb00a2a4ea5bcacc
-      internalID: -21248841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pipe Body
-      rect:
-        serializedVersion: 2
-        x: 813
-        y: 1572
-        width: 961
-        height: 107
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0c2fa98fd56bc64a87e5526cba89c9c
-      internalID: 1066214872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fish01
-      rect:
-        serializedVersion: 2
-        x: 2005
-        y: 1505
-        width: 281
-        height: 213
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c96da111a50976a4d85c27c67f9d17f7
-      internalID: 983909472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: ReadyToPlayFish
       rect:
         serializedVersion: 2
@@ -255,27 +192,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fish02
-      rect:
-        serializedVersion: 2
-        x: 2005
-        y: 1232
-        width: 281
-        height: 212
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 286dbfe98a4b5a94da918d34a1ab4731
-      internalID: -1963896991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: UpArrow
       rect:
         serializedVersion: 2
@@ -334,27 +250,6 @@ TextureImporter:
       bones: []
       spriteID: adce943258e2b994ca989e7c9180ddee
       internalID: 633909314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fish03
-      rect:
-        serializedVersion: 2
-        x: 2002
-        y: 946
-        width: 287
-        height: 213
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a78bfba9b86ca147bf8ae3f4a594c32
-      internalID: -585129370
       vertices: []
       indices: 
       edges: []
@@ -465,90 +360,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New
-      rect:
-        serializedVersion: 2
-        x: 1845
-        y: 582
-        width: 195
-        height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec8d55d5153c30c4fa9caec5d3d83bd0
-      internalID: -1990618887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ground
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 77
-        width: 1075
-        height: 359
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db10b3630b4325e48b58dddc08752c21
-      internalID: 710082249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flappy_fish_22
-      rect:
-        serializedVersion: 2
-        x: 1547
-        y: 346
-        width: 328
-        height: 132
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce0993b097654c143ace7f3770448fdb
-      internalID: 420888445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flappy_fish_23
-      rect:
-        serializedVersion: 2
-        x: 1880
-        y: 362
-        width: 207
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7382ffe02ce833d43ac3d6938f73b7fd
-      internalID: -295526106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: GetReady
       rect:
         serializedVersion: 2
@@ -586,27 +397,6 @@ TextureImporter:
       bones: []
       spriteID: 921a4c18d5d1bc64c8befae3aa89686c
       internalID: 2104733438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pipe Head
-      rect:
-        serializedVersion: 2
-        x: 1777
-        y: 1511
-        width: 107
-        height: 228
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06a9bb7bee57609459a2330e5c6a5c89
-      internalID: -216399230
       vertices: []
       indices: 
       edges: []

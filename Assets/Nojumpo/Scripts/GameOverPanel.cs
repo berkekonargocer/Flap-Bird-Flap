@@ -13,6 +13,7 @@ namespace Nojumpo
         readonly int GameOver = Animator.StringToHash("GameOver");
 
         [SerializeField] Image medalImage;
+        [SerializeField] Image newImage;
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] TextMeshProUGUI bestScoreText;
 
@@ -45,13 +46,17 @@ namespace Nojumpo
         }
 
         void SelectMedalSprite() {
-            if (ScoreManager.Instance.CurrentScore.Value < 30)
+            if (ScoreManager.Instance.CurrentScore.Value < 40)
             {
                 medalImage.gameObject.SetActive(false);
                 return;
             }
 
-            if (ScoreManager.Instance.CurrentScore.Value >= 30 && ScoreManager.Instance.CurrentScore.Value < 60)
+            if (ScoreManager.Instance.CurrentScore.Value >= 40 && ScoreManager.Instance.CurrentScore.Value < 80)
+            {
+                medalImage.sprite = AssetReferences.Instance.SilverMedalSprite;
+            }
+            else if(ScoreManager.Instance.CurrentScore.Value >= 80 && ScoreManager.Instance.CurrentScore.Value < 120)
             {
                 medalImage.sprite = AssetReferences.Instance.SilverMedalSprite;
             }

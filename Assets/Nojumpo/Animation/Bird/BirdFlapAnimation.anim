@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FishSwimAnimation
+  m_Name: BirdFlapAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1963896991, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+      value: {fileID: 144629025, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
     - time: 0.11666667
-      value: {fileID: 983909472, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+      value: {fileID: -1368795982, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
     - time: 0.21666667
-      value: {fileID: -585129370, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+      value: {fileID: -379916905, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
     - time: 0.33333334
-      value: {fileID: 983909472, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+      value: {fileID: -1368795982, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1963896991, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
-    - {fileID: 983909472, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
-    - {fileID: -585129370, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
-    - {fileID: 983909472, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
+    - {fileID: 144629025, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
+    - {fileID: -1368795982, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
+    - {fileID: -379916905, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
+    - {fileID: -1368795982, guid: dac5a311bec7fd5429ae7dab46a6c7b4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
