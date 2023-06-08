@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Nojumpo
 {
-    public class FishCollision : MonoBehaviour
+    public class BirdCollision : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        SpriteRenderer _fishSpriteRenderer;
+        SpriteRenderer _birdSpriteRenderer;
         
         [SerializeField] Color flashOnHitColor;
         
@@ -36,18 +36,18 @@ namespace Nojumpo
         void Die() {
             if (GameManager.Instance.CurrentGameState != GameState.DEAD)
             {
-                FishCollisionFlash();
+                BirdCollisionFlash();
                 GameManager.Instance.RaiseOnDieEvent();
             }
         }
         
         void SetComponents() {
-            _fishSpriteRenderer = GetComponent<SpriteRenderer>();
+            _birdSpriteRenderer = GetComponent<SpriteRenderer>();
         }
         
-        void FishCollisionFlash() {
-            _fishSpriteRenderer.color = flashOnHitColor;
-            _fishSpriteRenderer.DOColor(Color.white, 0.75f);
+        void BirdCollisionFlash() {
+            _birdSpriteRenderer.color = flashOnHitColor;
+            _birdSpriteRenderer.DOColor(Color.white, 0.75f);
         }
     }
 }

@@ -5,17 +5,17 @@ using UnityEngine.InputSystem;
 namespace Nojumpo.Scripts
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class FishMovementController : MonoBehaviour
+    public class BirdMovementController : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        Rigidbody2D _fishRigidbody2D;
-        Animator _fishAnimatorController;
+        Rigidbody2D _birdRigidbody2D;
+        Animator _birdAnimatorController;
         
         const int SWIM_AMOUNT = 40;
         const float MAX_Y_POSITION = 45.0f;
         bool _swimInput;
 
-        [SerializeField] AudioSource swimAudio;
+        [SerializeField] AudioSource flapAudio;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
@@ -34,7 +34,7 @@ namespace Nojumpo.Scripts
         }
 
         void Update() {
-            transform.eulerAngles = new Vector3(0, 0, _fishRigidbody2D.velocity.y * 0.4f);
+            transform.eulerAngles = new Vector3(0, 0, _birdRigidbody2D.velocity.y * 0.4f);
 
             if (GameManager.Instance.CurrentGameState == GameState.DEAD)
                 return;
@@ -46,32 +46,32 @@ namespace Nojumpo.Scripts
                     GameManager.Instance.RaiseOnGameStartEvent(GameState.PLAYING);
                 }
                 
-                Swim();
+                Flap();
             }
         }
 
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
-            _fishRigidbody2D = GetComponent<Rigidbody2D>();
-            _fishAnimatorController = GetComponent<Animator>();
+            _birdRigidbody2D = GetComponent<Rigidbody2D>();
+            _birdAnimatorController = GetComponent<Animator>();
         }
 
         void OnJump(InputValue inputValue) {
             _swimInput = inputValue.isPressed;
         }
 
-        void Swim() {
-            _fishRigidbody2D.velocity = Vector2.up * SWIM_AMOUNT;
-            swimAudio.Play();
+        void Flap() {
+            _birdRigidbody2D.velocity = Vector2.up * SWIM_AMOUNT;
+            flapAudio.Play();
         }
 
         void SetRigidbodyToDynamic(GameState gameState) {
-            _fishRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+            _birdRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
         }
 
         void StopAnimation() {
-            _fishAnimatorController.enabled = false;
+            _birdAnimatorController.enabled = false;
         }
     }
 }

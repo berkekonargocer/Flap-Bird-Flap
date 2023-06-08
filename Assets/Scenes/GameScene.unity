@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   medalImage: {fileID: 1240147008}
-  newImage: {fileID: 1980950134}
+  newBestImage: {fileID: 1980950134}
   scoreText: {fileID: 783412893}
   bestScoreText: {fileID: 838760237}
 --- !u!1 &1081135250
@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaec99fff5c84d4dbd6eace1da1ed89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swimAudio: {fileID: 709526311}
+  flapAudio: {fileID: 0}
 --- !u!114 &1201118227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3990,12 +3990,12 @@ GameObject:
   - component: {fileID: 1980950135}
   - component: {fileID: 1980950134}
   m_Layer: 5
-  m_Name: '"New" Image'
+  m_Name: New Best Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1980950133
 RectTransform:
   m_ObjectHideFlags: 0

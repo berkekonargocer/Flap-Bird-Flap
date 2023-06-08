@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Nojumpo.Enums;
 using Nojumpo.ScriptableObjects.Datas.Variable;
 using Nojumpo.Scripts;
@@ -22,7 +23,7 @@ namespace Nojumpo.Managers
 
         public event Action<int> OnAddScore;
 
-        
+
         // ------------------------ UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
             SceneManager.sceneLoaded += SetComponents;
@@ -40,7 +41,6 @@ namespace Nojumpo.Managers
 
         void Awake() {
             InitializeSingleton();
-            
         }
 
 
@@ -61,26 +61,32 @@ namespace Nojumpo.Managers
             _scoreAudio = GameObject.FindWithTag("Audios/POINT").GetComponent<AudioSource>();
         }
 
-        bool IsCurrentScoreMoreThanHighScore() {
-            return currentScore.Value > PlayerPrefs.GetInt("Best Score");
-        }
 
         void UpdateBestScore() {
-            if (IsCurrentScoreMoreThanHighScore())
-            {
-                PlayerPrefs.SetInt("Best Score", currentScore.Value);
-            }
+            StartCoroutine(nameof(UpdateBestScoreCoroutine));
         }
 
         void ResetCurrentScore(GameState gameState) {
             currentScore.ResetValue();
         }
 
+        IEnumerator UpdateBestScoreCoroutine() {
+            yield return new WaitForSeconds(1.0f);
+
+            if (IsNewBest())
+            {
+                PlayerPrefs.SetInt("Best Score", currentScore.Value);
+            }
+        }
 
         // ------------------------ CUSTOM PUBLIC METHODS -------------------------
         public void RaiseOnAddScoreEvent(int scoreToAdd) {
             OnAddScore?.Invoke(scoreToAdd);
             _scoreAudio.Play();
+        }
+
+        public bool IsNewBest() {
+            return currentScore.Value > PlayerPrefs.GetInt("Best Score");
         }
     }
 }

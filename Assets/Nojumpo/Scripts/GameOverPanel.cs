@@ -13,28 +13,30 @@ namespace Nojumpo
         readonly int GameOver = Animator.StringToHash("GameOver");
 
         [SerializeField] Image medalImage;
-        [SerializeField] Image newImage;
+        [SerializeField] Image newBestImage;
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] TextMeshProUGUI bestScoreText;
 
 
         // ------------------------- UNITY BUILT-IN METHODS ------------------------
         void OnEnable() {
-            GameManager.Instance.OnDie += PlayAnimation;
+            GameManager.Instance.OnDie += ShowNewBestImage;
             GameManager.Instance.OnDie += UpdateScoreTexts;
             GameManager.Instance.OnDie += SelectMedalSprite;
+            GameManager.Instance.OnDie += PlayAnimation;
         }
 
         void OnDisable() {
-            GameManager.Instance.OnDie -= PlayAnimation;
+            GameManager.Instance.OnDie -= ShowNewBestImage;
             GameManager.Instance.OnDie -= UpdateScoreTexts;
             GameManager.Instance.OnDie -= SelectMedalSprite;
+            GameManager.Instance.OnDie -= PlayAnimation;
         }
-        
+
         void Awake() {
-            SetComponents();    
+            SetComponents();
         }
-        
+
 
         // ------------------------- CUSTOM PRIVATE METHODS ------------------------
         void SetComponents() {
@@ -46,17 +48,17 @@ namespace Nojumpo
         }
 
         void SelectMedalSprite() {
-            if (ScoreManager.Instance.CurrentScore.Value < 40)
+            if (ScoreManager.Instance.CurrentScore.Value < 60)
             {
                 medalImage.gameObject.SetActive(false);
                 return;
             }
 
-            if (ScoreManager.Instance.CurrentScore.Value >= 40 && ScoreManager.Instance.CurrentScore.Value < 80)
+            if (ScoreManager.Instance.CurrentScore.Value >= 60 && ScoreManager.Instance.CurrentScore.Value < 80)
             {
                 medalImage.sprite = AssetReferences.Instance.SilverMedalSprite;
             }
-            else if(ScoreManager.Instance.CurrentScore.Value >= 80 && ScoreManager.Instance.CurrentScore.Value < 120)
+            else if (ScoreManager.Instance.CurrentScore.Value >= 80 && ScoreManager.Instance.CurrentScore.Value < 100)
             {
                 medalImage.sprite = AssetReferences.Instance.SilverMedalSprite;
             }
@@ -65,10 +67,25 @@ namespace Nojumpo
                 medalImage.sprite = AssetReferences.Instance.GoldenMedalSprite;
             }
         }
-        
+
+        void ShowNewBestImage() {
+            if (ScoreManager.Instance.IsNewBest())
+            {
+                newBestImage.gameObject.SetActive(true);
+            }
+        }
+
         void UpdateScoreTexts() {
             scoreText.text = $"{ScoreManager.Instance.CurrentScore.Value}";
-            bestScoreText.text = $"{PlayerPrefs.GetInt("Best Score")}";
+
+            if (ScoreManager.Instance.IsNewBest())
+            {
+                bestScoreText.text = $"{ScoreManager.Instance.CurrentScore.Value}";
+            }
+            else
+            {
+                bestScoreText.text = $"{PlayerPrefs.GetInt("Best Score")}";
+            }
         }
     }
 }
