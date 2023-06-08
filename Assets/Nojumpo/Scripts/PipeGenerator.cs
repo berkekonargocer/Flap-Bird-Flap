@@ -10,9 +10,11 @@ namespace Nojumpo.Scripts
     public class PipeGenerator : MonoBehaviour
     {
         // -------------------------------- FIELDS ---------------------------------
-        const float PIPE_BODY_HEIGHT = 1.0f;
-        const float PIPE_BODY_SCALE = 5.0f;
-        const float PIPE_HEAD_SCALE = 3.5f;
+        const float PIPE_BODY_WIDTH = 0.28f;
+        const float PIPE_BODY_X_SCALE = 15.0f;
+        const float PIPE_BODY_Y_SCALE = 1.0f;
+        const float PIPE_HEAD_X_SCALE = 15.0f;
+        const float PIPE_HEAD_Y_SCALE = 10.0f;
 
         const float CAMERA_ORTHO_SIZE = 50;
 
@@ -36,11 +38,11 @@ namespace Nojumpo.Scripts
         void OnEnable() {
             GameManager.Instance.OnGameStart += StartPipeGeneration;
         }
-        
+
         void OnDisable() {
             GameManager.Instance.OnGameStart -= StartPipeGeneration;
         }
-        
+
         void Awake() {
             _pipePool = new ObjectPool<Pipe>(CreatePipe, OnGetPipe, OnReleasePipe, OnDestroyPipe, checkCollection, defaultAmount, maxAmount);
         }
@@ -72,40 +74,40 @@ namespace Nojumpo.Scripts
             Transform pipeObject = pipe.transform;
 
             // Pipe on bottom
-            float bottomPipeBodyWidth = (gapYPosition - gapSize * 0.5f) / 5;
+            float bottomPipeBodyHeight = gapYPosition - gapSize * 0.5f;
 
             Transform bottomPipeBody = pipeObject.transform.GetChild(0).GetChild(0);
             Transform bottomPipeHead = pipeObject.transform.GetChild(0).GetChild(1);
             SpriteRenderer bottomPipeBodySpriteRenderer = bottomPipeBody.GetComponent<SpriteRenderer>();
             BoxCollider2D bottomPipeBodyBoxCollider2D = bottomPipeBody.GetComponent<BoxCollider2D>();
 
-            float bottomPipeHeadYPosition = -CAMERA_ORTHO_SIZE + bottomPipeBodyWidth * 5;
+            float bottomPipeHeadYPosition = -CAMERA_ORTHO_SIZE + bottomPipeBodyHeight;
             float bottomPipeBodyYPosition = -CAMERA_ORTHO_SIZE;
 
             bottomPipeHead.position = new Vector3(xPosition, bottomPipeHeadYPosition);
             bottomPipeBody.position = new Vector3(xPosition, bottomPipeBodyYPosition);
-            bottomPipeBodySpriteRenderer.size = new Vector2(bottomPipeBodyWidth, PIPE_BODY_HEIGHT);
-            bottomPipeBodyBoxCollider2D.size = new Vector2(bottomPipeBodyWidth, PIPE_BODY_HEIGHT);
-            bottomPipeBodyBoxCollider2D.offset = new Vector2(bottomPipeBodyWidth * 0.5f, 0f);
+            bottomPipeBodySpriteRenderer.size = new Vector2(PIPE_BODY_WIDTH, bottomPipeBodyHeight);
+            bottomPipeBodyBoxCollider2D.size = new Vector2(PIPE_BODY_WIDTH, bottomPipeBodyHeight);
+            bottomPipeBodyBoxCollider2D.offset = new Vector2(0f, bottomPipeBodyHeight * 0.5f);
 
             // Pipe on top
-            float topPipeBodyWidth = (CAMERA_ORTHO_SIZE * 2 - gapYPosition - gapSize * 0.5f) / 5;
+            float topPipeBodyHeight = CAMERA_ORTHO_SIZE * 2 - gapYPosition - gapSize * 0.5f;
 
             Transform topPipeBody = pipeObject.transform.GetChild(1).GetChild(0);
             Transform topPipeHead = pipeObject.transform.GetChild(1).GetChild(1);
             SpriteRenderer topPipeBodySpriteRenderer = topPipeBody.GetComponent<SpriteRenderer>();
             BoxCollider2D topPipeBodyBoxCollider2D = topPipeBody.GetComponent<BoxCollider2D>();
 
-            float topPipeHeadYPosition = CAMERA_ORTHO_SIZE + topPipeBodyWidth * -5;
+            float topPipeHeadYPosition = CAMERA_ORTHO_SIZE + topPipeBodyHeight * -1;
             float topPipeBodyYPosition = CAMERA_ORTHO_SIZE;
-            topPipeHead.localScale = new Vector3(-PIPE_HEAD_SCALE, PIPE_HEAD_SCALE, PIPE_HEAD_SCALE);
-            topPipeBody.localScale = new Vector3(-PIPE_BODY_SCALE, PIPE_BODY_SCALE, PIPE_BODY_SCALE);
+            topPipeHead.localScale = new Vector3(PIPE_HEAD_X_SCALE, PIPE_HEAD_Y_SCALE, 1);
+            topPipeBody.localScale = new Vector3(PIPE_BODY_X_SCALE, -PIPE_BODY_Y_SCALE, 1);
 
             topPipeHead.position = new Vector3(xPosition, topPipeHeadYPosition);
             topPipeBody.position = new Vector3(xPosition, topPipeBodyYPosition);
-            topPipeBodySpriteRenderer.size = new Vector2(topPipeBodyWidth, PIPE_BODY_HEIGHT);
-            topPipeBodyBoxCollider2D.size = new Vector2(topPipeBodyWidth, PIPE_BODY_HEIGHT);
-            topPipeBodyBoxCollider2D.offset = new Vector2(topPipeBodyWidth * 0.5f, 0f);
+            topPipeBodySpriteRenderer.size = new Vector2(PIPE_BODY_WIDTH, topPipeBodyHeight);
+            topPipeBodyBoxCollider2D.size = new Vector2(PIPE_BODY_WIDTH,topPipeBodyHeight);
+            topPipeBodyBoxCollider2D.offset = new Vector2(0f, topPipeBodyHeight * 0.5f);
         }
 
         IEnumerator CreatePipesWithGapPeriodically() {
@@ -114,11 +116,11 @@ namespace Nojumpo.Scripts
             {
                 if (GameManager.Instance.CurrentGameState == GameState.DEAD)
                     StopCoroutine(nameof(CreatePipesWithGapPeriodically));
-                
+
                 _pipePool.Get();
                 yield return new WaitForSeconds(PIPE_SPAWN_RATE);
             }
-            
+
             _minGapYPosition -= GAP_Y_POSITION_SCALE_AMOUNT;
             _maxGapYPosition += GAP_Y_POSITION_SCALE_AMOUNT;
             _gapSize -= GAP_SIZE_SCALE_AMOUNT;

@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd103bde0c05a2c4a8c29284971b8ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PipePrefab: {fileID: 4300335851045734243, guid: 8aa40a6afc22b754cb70c1e8619901ea, type: 3}
+  PipePrefab: {fileID: 2522550185903039984, guid: cf1f97b8c691a2c409805f4287e41fcf, type: 3}
   SilverMedalSprite: {fileID: 633909314, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
   GoldenMedalSprite: {fileID: -1071473475, guid: 0715056fe02c0a84f961b2493145bd07, type: 3}
 --- !u!4 &113683821
