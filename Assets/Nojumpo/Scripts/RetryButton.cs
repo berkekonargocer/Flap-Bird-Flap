@@ -1,9 +1,7 @@
-using Nojumpo.Enums;
-using Nojumpo.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Nojumpo
+namespace Nojumpo.Scripts
 {
     public class RetryButton : MonoBehaviour
     {

@@ -1,13 +1,10 @@
 using System;
 using System.Collections;
-using Nojumpo.Enums;
 using Nojumpo.ScriptableObjects.Datas.Variable;
-using Nojumpo.Scripts;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Nojumpo.Managers
+namespace Nojumpo.Scripts
 {
     public class ScoreManager : MonoBehaviour
     {

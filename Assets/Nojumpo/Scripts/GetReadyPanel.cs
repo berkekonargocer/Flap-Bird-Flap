@@ -1,9 +1,7 @@
 using DG.Tweening;
-using Nojumpo.Enums;
-using Nojumpo.Scripts;
 using UnityEngine;
 
-namespace Nojumpo
+namespace Nojumpo.Scripts
 {
     public class GetReadyPanel : MonoBehaviour
     {

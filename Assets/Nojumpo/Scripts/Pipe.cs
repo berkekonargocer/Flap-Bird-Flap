@@ -1,12 +1,7 @@
-using System;
-using Nojumpo.Enums;
-using Nojumpo.Managers;
-using Nojumpo.ScriptableObjects.Datas.Variable;
-using Nojumpo.Scripts;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Nojumpo
+namespace Nojumpo.Scripts
 {
     public class Pipe : MonoBehaviour
     {

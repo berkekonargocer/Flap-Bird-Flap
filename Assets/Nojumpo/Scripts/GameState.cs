@@ -1,6 +1,6 @@
 using System;
 
-namespace Nojumpo.Enums
+namespace Nojumpo.Scripts
 {
     [Serializable]
     public enum GameState

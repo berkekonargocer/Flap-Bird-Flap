@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using Nojumpo.Enums;
 using UnityEngine;
 using UnityEngine.Pool;
-using Random = UnityEngine.Random;
 
 namespace Nojumpo.Scripts
 {

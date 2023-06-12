@@ -1,10 +1,9 @@
 using DG.Tweening;
 using Nojumpo.Enums;
-using Nojumpo.Scripts;
 using TMPro;
 using UnityEngine;
 
-namespace Nojumpo.Managers
+namespace Nojumpo.Scripts
 {
     public class CurrentScoreText : MonoBehaviour
     {

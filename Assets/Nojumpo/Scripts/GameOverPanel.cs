@@ -1,10 +1,8 @@
-using Nojumpo.Managers;
-using Nojumpo.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Nojumpo
+namespace Nojumpo.Scripts
 {
     public class GameOverPanel : MonoBehaviour
     {
