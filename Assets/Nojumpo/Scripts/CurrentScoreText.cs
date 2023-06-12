@@ -1,5 +1,4 @@
 using DG.Tweening;
-using Nojumpo.Enums;
 using TMPro;
 using UnityEngine;
 
