@@ -10,9 +10,9 @@ namespace Nojumpo.Scripts
         Rigidbody2D _birdRigidbody2D;
         Animator _birdAnimatorController;
         
-        const int SWIM_AMOUNT = 40;
+        const int FLAP_AMOUNT = 40;
         const float MAX_Y_POSITION = 45.0f;
-        bool _swimInput;
+        bool _flapInput;
 
         [SerializeField] AudioSource flapAudio;
 
@@ -38,7 +38,7 @@ namespace Nojumpo.Scripts
             if (GameManager.Instance.CurrentGameState == GameState.DEAD)
                 return;
 
-            if (_swimInput && transform.position.y < MAX_Y_POSITION)
+            if (_flapInput && transform.position.y < MAX_Y_POSITION)
             {
                 if (GameManager.Instance.CurrentGameState == GameState.READYTOPLAY)
                 {
@@ -57,11 +57,11 @@ namespace Nojumpo.Scripts
         }
 
         void OnJump(InputValue inputValue) {
-            _swimInput = inputValue.isPressed;
+            _flapInput = inputValue.isPressed;
         }
 
         void Flap() {
-            _birdRigidbody2D.velocity = Vector2.up * SWIM_AMOUNT;
+            _birdRigidbody2D.velocity = Vector2.up * FLAP_AMOUNT;
             flapAudio.Play();
         }
 
